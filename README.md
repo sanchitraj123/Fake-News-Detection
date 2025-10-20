@@ -1,134 +1,116 @@
 📰 Fake News Detection using Machine Learning
-This project demonstrates how to detect fake news articles using modern machine learning models and text processing techniques in Python.
-It integrates multiple classification algorithms and natural language preprocessing to differentiate between real and fake news headlines and content accurately.
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=
+[![Scikit-learn](https://img.shields.io/badge/ScikitLearn-ML-yellow?logo
+[![License](https://img.shields.io/badge
+[![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange?
 
-📘 Project Overview
-The goal of this project is to build a binary classifier that predicts whether a news article is Fake or Real.
-It uses data preprocessing, text vectorization, and machine learning models to perform classification.
+A complete end-to-end Fake News Detection project powered by machine learning and natural language processing (NLP), built to classify real and fake news articles with over 98% accuracy.
+
+🧭 Table of Contents
+About The Project
+
+Directory Structure
+
+Dataset Source
+
+Model Overview
+
+Installation
+
+Usage
+
+Performance
+
+Future Improvements
+
+Author
+
+📖 About The Project
+Fake news spreads quickly on the internet, influencing public opinion and generating misinformation.
+This project aims to detect fake news automatically by training multiple machine learning models on real-world data.
 
 Workflow Summary
-Load and combine “Fake” and “True” news datasets
+Combine and clean real and fake news datasets
 
-Clean and preprocess text data (removing punctuation, URLs, stopwords)
+Remove punctuation, symbols, and stopwords
 
-Convert text into TF–IDF features
+Convert text into numerical vectors using TF–IDF
 
-Train multiple classifiers:
+Train and compare different models: Logistic Regression, Decision Tree, Gradient Boosting, and Random Forest
 
-Logistic Regression
+Evaluate accuracy and F1 scores
 
-Decision Tree Classifier
-
-Gradient Boosting Classifier
-
-Random Forest Classifier
-
-Evaluate performance and compare model accuracies
-
-Test prediction with manual user input
-
-🧠 Models and Accuracy
-Model	Accuracy	Key Features
-Logistic Regression	98.8%	High performance, simple linear classifier
-Decision Tree Classifier	99.4%	Handles non-linear relationships well
-Gradient Boosting Classifier	99.5%	Best performing model with excellent precision and recall
-Random Forest Classifier	99.1%	Robust to overfitting and good generalization performance
-All models achieved over 98% accuracy, with Gradient Boosting slightly outperforming others.
-
-🧩 Dataset
-Fake.csv — contains examples of fake news articles
-
-True.csv — contains examples of real news articles
-Each entry includes a title, text body, subject, and publication date.
-
-Dataset Preparation
-Combined into a single dataset labeled:
-
-0 → Fake news
-
-1 → Real news
-
-Randomly shuffled to ensure unbiased model learning.
-
-🧹 Data Preprocessing
-Key preprocessing steps included:
-
-Removal of punctuation, URLs, and special symbols
-
-Conversion to lowercase
-
-Substitution of unnecessary characters using regex
-
-Text vectorization using TfidfVectorizer (Term Frequency–Inverse Document Frequency)
-
-Splitting data into training and testing sets (75/25)
-
-🧪 Model Evaluation
-Each model’s performance was assessed via:
-
-Accuracy Score
-
-Precision / Recall / F1 Score
-
-Classification Report
-
-Example metrics for Gradient Boosting:
-
+🗂️ Directory Structure
 text
-Accuracy: 1.00
-Precision: 0.99
-Recall: 1.00
-F1-Score: 1.00
-🧍 Manual Testing
-You can test individual news text snippets manually:
+Fake_news_detection/
+│
+├── data/
+│   ├── Fake.csv
+│   ├── True.csv
+│
+├── notebooks/
+│   ├── Fake_news_detection.ipynb
+│
+├── README.md
+└── requirements.txt
+🧩 Dataset Source
+The project uses publicly available data:
 
-python
-def manual_testing(news):
-    testing_news = {"text": [news]}
-    new_def_test = pd.DataFrame(testing_news)
-    new_x_test = vectorization.transform(new_def_test["text"])
-    pred = GBC.predict(new_x_test)
-    return "Fake News" if pred == 0 else "Real News"
-⚙️ Technologies Used
-Python 3.8+
+Fake.csv – Contains fake news articles
 
-Pandas / NumPy / Seaborn / Matplotlib
+True.csv – Contains verified real articles
 
-Scikit-learn (LogisticRegression, DecisionTreeClassifier, GradientBoosting, RandomForest)
+Each record includes:
 
-TF–IDF for feature extraction
+title → Headline of the article
 
-Jupyter Notebook
+text → Full article content
 
-🚀 How to Run
-Clone Repository
+subject → Category or topic
+
+date → Publication date
+
+⚙️ Model Overview
+Model	Accuracy	Description
+Logistic Regression	98.8%	Linear baseline with high interpretability
+Decision Tree Classifier	99.4%	Handles non-linear data well
+Gradient Boosting Classifier	99.5%	Best performer with minimal overfitting
+Random Forest Classifier	99.1%	Robust ensemble method
+📦 Installation
+Clone the repository and install dependencies.
+
 bash
 git clone https://github.com/<your-username>/Fake_news_detection.git
 cd Fake_news_detection
-Install Dependencies
-bash
 pip install -r requirements.txt
-Run the Notebook
+Make sure to install Jupyter Notebook if not already:
+
+bash
+pip install notebook
+🚀 Usage
+Run the Jupyter notebook to train and test the models:
+
 bash
 jupyter notebook Fake_news_detection.ipynb
-🧾 Results
-✅ High prediction accuracy (99%)
-✅ Reliable model comparison
-✅ Easy-to-use manual testing section
+Try manual testing with a custom news example in the notebook:
 
-📈 Future Improvements
-Implement deep learning models (LSTM / BERT)
+python
+manual_testing("The government announced a new healthcare plan today...")
+📊 Performance
+Evaluation Metrics (Gradient Boosting)
+python
+Accuracy: 99.5%
+Precision: 0.99
+Recall: 1.00
+F1-score: 1.00
+Visualization highlights include:
 
-Deploy via Flask streamlit app
+Confusion matrix of prediction classes
 
-Build an interactive web interface
+Feature importance plots using TF–IDF
 
-🤝 Contributing
-Contributions, issues, and feature requests are welcome!
-Fork the repo and submit a pull request.
+💡 Future Improvements
+Enhance with deep learning models (LSTM, BERT)
 
-🧑‍💻 Author
-[Your Name]
-Full Stack Developer | Machine Learning Enthusiast
-📧 Email: your-email@example.com
-🌐 GitHub: github.com/your-username
+Build a real-time web application for prediction
+
