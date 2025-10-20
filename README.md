@@ -1,116 +1,138 @@
-📰 Fake News Detection using Machine Learning
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=
-[![Scikit-learn](https://img.shields.io/badge/ScikitLearn-ML-yellow?logo
-[![License](https://img.shields.io/badge
-[![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange?
+# 📰 Fake News Detection using Machine Learning  
 
-A complete end-to-end Fake News Detection project powered by machine learning and natural language processing (NLP), built to classify real and fake news articles with over 98% accuracy.
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)]()  
+[![Scikit-learn](https://img.shields.io/badge/ScikitLearn-ML-yellow?logo=scikit-learn)]()  
+[![License](https://img.shields.io/badge/License-MIT-green.svg)]()  
+[![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)]()  
 
-🧭 Table of Contents
-About The Project
+> A complete end-to-end **Fake News Detection** system built using machine learning and NLP that classifies real and fake news articles with over 98% accuracy.
 
-Directory Structure
+---
 
-Dataset Source
+## 🧭 Table of Contents
+- [About The Project](#about-the-project)
+- [Directory Structure](#directory-structure)
+- [Dataset Source](#dataset-source)
+- [Model Overview](#model-overview)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Performance](#performance)
+- [Future Improvements](#future-improvements)
+- [Author](#author)
+- [License](#license)
 
-Model Overview
+---
 
-Installation
+## 📖 About The Project
 
-Usage
+Fake news spreads fast online, influencing public perception and trust.  
+This project builds a **binary classifier** to automatically identify fake news articles.
 
-Performance
+### Workflow Summary
+- Load and combine fake and real news datasets  
+- Clean text (stopwords, punctuation, etc.)  
+- Convert text into **TF–IDF feature vectors**  
+- Train ML models: `Logistic Regression`, `Decision Tree`, `Random Forest`, `Gradient Boosting`  
+- Evaluate and compare model performance  
 
-Future Improvements
+---
 
-Author
-
-📖 About The Project
-Fake news spreads quickly on the internet, influencing public opinion and generating misinformation.
-This project aims to detect fake news automatically by training multiple machine learning models on real-world data.
-
-Workflow Summary
-Combine and clean real and fake news datasets
-
-Remove punctuation, symbols, and stopwords
-
-Convert text into numerical vectors using TF–IDF
-
-Train and compare different models: Logistic Regression, Decision Tree, Gradient Boosting, and Random Forest
-
-Evaluate accuracy and F1 scores
-
-🗂️ Directory Structure
-text
+## 🗂️ Directory Structure
 Fake_news_detection/
 │
 ├── data/
-│   ├── Fake.csv
-│   ├── True.csv
+│ ├── Fake.csv
+│ ├── True.csv
 │
 ├── notebooks/
-│   ├── Fake_news_detection.ipynb
+│ └── Fake_news_detection.ipynb
 │
 ├── README.md
 └── requirements.txt
-🧩 Dataset Source
-The project uses publicly available data:
 
-Fake.csv – Contains fake news articles
+text
 
-True.csv – Contains verified real articles
+---
 
-Each record includes:
+## 🧩 Dataset Source
 
-title → Headline of the article
+Uses two main datasets:  
 
-text → Full article content
+- **Fake.csv** — fake or misleading articles  
+- **True.csv** — verified real news  
 
-subject → Category or topic
+Each entry includes the following features:
+| Column | Description |
+|---------|--------------|
+| title   | Headline text |
+| text    | Full content of article |
+| subject | Topic category |
+| date    | Publication date |
 
-date → Publication date
+---
 
-⚙️ Model Overview
-Model	Accuracy	Description
-Logistic Regression	98.8%	Linear baseline with high interpretability
-Decision Tree Classifier	99.4%	Handles non-linear data well
-Gradient Boosting Classifier	99.5%	Best performer with minimal overfitting
-Random Forest Classifier	99.1%	Robust ensemble method
-📦 Installation
-Clone the repository and install dependencies.
+## ⚙️ Model Overview
 
-bash
+| Model | Accuracy | Notes |
+|-------|-----------|-------|
+| Logistic Regression | 98.8% | Linear model, quick and efficient |
+| Decision Tree | 99.4% | Handles complex relationships |
+| Gradient Boosting | 99.5% | Best performing model |
+| Random Forest | 99.1% | Robust, less overfitting |
+
+---
+
+## 📦 Installation
+
+**Step 1:** Clone the repository  
 git clone https://github.com/<your-username>/Fake_news_detection.git
 cd Fake_news_detection
+
+text
+
+**Step 2:** Install dependencies  
 pip install -r requirements.txt
-Make sure to install Jupyter Notebook if not already:
 
-bash
-pip install notebook
-🚀 Usage
-Run the Jupyter notebook to train and test the models:
+text
 
-bash
+**Step 3:** Launch Jupyter Notebook  
 jupyter notebook Fake_news_detection.ipynb
-Try manual testing with a custom news example in the notebook:
 
-python
+text
+
+---
+
+## 🚀 Usage
+
+Test the model by running the notebook cells, or try custom input:
+
 manual_testing("The government announced a new healthcare plan today...")
-📊 Performance
-Evaluation Metrics (Gradient Boosting)
-python
+
+text
+
+The model will return **"Real News"** or **"Fake News"** based on its prediction.
+
+---
+
+## 📊 Performance
+
+Gradient Boosting achieved:
 Accuracy: 99.5%
 Precision: 0.99
 Recall: 1.00
-F1-score: 1.00
-Visualization highlights include:
+F1-Score: 1.00
 
-Confusion matrix of prediction classes
+text
 
-Feature importance plots using TF–IDF
+Key visualizations:
+- Confusion Matrix  
+- Feature Importance (TF–IDF)  
+- Model Comparison Chart  
 
-💡 Future Improvements
-Enhance with deep learning models (LSTM, BERT)
+---
 
-Build a real-time web application for prediction
+## 💡 Future Improvements
 
+- 🧠 Integrate Deep Learning models (e.g., LSTM, BERT)  
+- 🌐 Build a web interface using Flask or Streamlit  
+- 📊 Add live news sentiment analysis  
